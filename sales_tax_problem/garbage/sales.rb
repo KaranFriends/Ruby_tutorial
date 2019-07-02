@@ -1,35 +1,28 @@
-class Product
-  def initialize(name,price,tax,quantity,imported)
-    @name=name
-    @price=price
-    @tax=tax
-    @imported=imported
-    @quantity = quantity
-    @sales_tax=0
-  end
-  def update
-    @sales_tax = @tax * @price  / 100
-    @price += @sales_tax
-    @price *= @quantity
-  end
-  def ret_name
-      @name
-  end
-  def ret_price
-      @price
-  end
-  def ret_tax
-      @sales_tax
-  end
-
-end
+load product.rb
 
 def set(result)
   quantity = result.split(" ").first.to_i
   price = result.split(" ").last.to_f
   imported = result.include?("imported")# ? true : false
   # sales_tax = imported ? result.include("imported") || result.include("pill") || result.include("book") ? 5 :
-  tax =result.include?("chocolate") || result.include?("pill") || result.include?("book") ? imported ? 5 : 0 : imported ? 15 : 10
+  item = ["chocolate","pill","book"]
+
+  if item.inclue? result.split("at").first.split(" ").last
+    tax = imported ? 5 : 0
+  else if
+    tax = imported ? 15 : 10
+  end
+  # if result.include?("chocolate")
+  #   tax = imported ? 5 : 0
+  # else if result.include?("pill")
+  #   tax = imported ? 5 : 0
+  # else if result.include?("book")
+  #   tax = imported ? 5 : 0
+  #   tax = imported ? 15 : 10
+  # else
+  # end
+
+  # tax =result.include?("chocolate") || result.include?("pill") || result.include?("book") ? imported ? 5 : 0 : imported ? 15 : 10
   #p tax
   Product.new(result,price,tax,quantity,imported )
 end
