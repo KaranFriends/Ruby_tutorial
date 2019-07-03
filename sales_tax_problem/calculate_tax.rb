@@ -10,7 +10,7 @@ class Calculate
     # sales_tax = imported ? result.include("imported") || result.include("pill") || result.include("book") ? 5 :
     item = ["chocolate","pill","book"]
     tax = false
-    #p result.split("at ").first.split(" ").last
+    # p result.split("at ").first.split(" ").last
     if item.include? result.split("at ").first.split(" ").last
       tax = imported ? 5 : 0
     elsif

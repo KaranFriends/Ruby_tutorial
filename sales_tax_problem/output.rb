@@ -14,5 +14,4 @@ class Output
     p "Sales Taxes: #{tax.round(2)}"
     p "Total: #{price.round(2)}"
   end
-
 end
