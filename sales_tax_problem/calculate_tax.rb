@@ -11,7 +11,8 @@ class Calculate
     item = ["chocolate","pill","book"]
     tax = false
     # p result.split("at ").first.split(" ").last
-    if item.include? result.split("at ").first.split(" ").last
+    pp = result.split(" ")
+    if pp - item != pp
       tax = imported ? 5 : 0
     elsif
       tax = imported ? 15 : 10
