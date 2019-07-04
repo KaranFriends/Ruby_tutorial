@@ -23,9 +23,10 @@ class Input < Calculate
           raise "Error"
         end
       rescue
+          p "error in line #{ input.find_index(i) + 1}"
           p "you have entered wrong format of string"
           p "enter in following format"
-          p "quantity name_of_product at price"
+          p "quantity-name_of_product-at-price"
           # retry
           input.delete(i)
         end
